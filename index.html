@@ -1087,7 +1087,172 @@
         font-size: 10px;
       }
     }
-  </style>
+  
+/* =========================================================
+   📱 MOBILE RESPONSIVE (APP-NATIVE FEEL)
+========================================================= */
+@media (max-width: 768px) {
+  body {
+      padding: 16px 12px !important;
+      padding-bottom: 90px !important; /* Space for bottom nav */
+  }
+
+  /* Bottom Tab Bar */
+  nav {
+      position: fixed !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      z-index: 9999 !important;
+      padding: 12px 8px 24px !important; /* Extra padding for modern smartphone rounded corners/home bar */
+      display: flex !important;
+      justify-content: space-around !important;
+      border-radius: 20px 20px 0 0 !important;
+      margin: 0 !important;
+      gap: 4px !important;
+      border: none !important;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+  }
+
+  body.dark-mode nav {
+      background: rgba(30, 30, 28, 0.85) !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+  }
+
+  body:not(.dark-mode) nav {
+      background: rgba(255, 255, 255, 0.85) !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
+  }
+
+  nav button {
+      flex: 1;
+      padding: 10px 4px !important;
+      font-size: 11px !important;
+      border-radius: 12px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
+      background: transparent !important;
+      border: none !important;
+      color: var(--text-muted) !important;
+  }
+
+  nav button.active {
+      color: var(--accent) !important;
+      background: rgba(176,141,74,0.15) !important;
+      font-weight: 600;
+  }
+
+  /* Grid Layouts Stack */
+  .grid-2, .grid-3, .grid-4 {
+      grid-template-columns: 1fr !important;
+      gap: 16px !important;
+  }
+  
+  /* Exception: forecast 6 columns -> 3 columns */
+  .forecast-grid {
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 16px !important;
+  }
+  .forecast-summary {
+     grid-template-columns: 1fr !important;
+     gap: 16px !important;
+  }
+
+  /* Typography */
+  header {
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      gap: 16px !important;
+      margin-bottom: 24px !important;
+  }
+  #header-controls {
+      width: 100% !important;
+      display: flex !important;
+      justify-content: space-between !important;
+  }
+  header h1 {
+      font-size: 26px !important;
+  }
+  .section-title {
+      font-size: 24px !important;
+      margin-bottom: 16px !important;
+  }
+  .upload-title {
+      font-size: 38px !important;
+  }
+
+  .stat-big {
+      font-size: 32px !important;
+  }
+
+  /* Tables and Data Overflows */
+  table {
+      font-size: 13px !important;
+  }
+  .table-container {
+      overflow-x: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+      margin: 0 -12px !important;
+      padding: 0 12px !important;
+      width: calc(100% + 24px) !important;
+  }
+  .table-container table {
+      min-width: 500px !important;
+  }
+
+  /* Search Inputs & Utilities */
+  .search-input {
+      width: 100% !important;
+      margin-bottom: 16px !important;
+  }
+  .btn-upload {
+      width: 100% !important;
+  }
+  .upload-area {
+      padding: 32px 16px !important;
+  }
+  
+  /* Calendar Mobile */
+  .calendar-title {
+      font-size: 16px !important;
+  }
+  .calendar-nav button {
+      padding: 6px 10px !important;
+      font-size: 12px !important;
+  }
+  .cal-day {
+      min-height: 70px !important;
+      padding: 2px !important;
+  }
+  .cal-num {
+      font-size: 11px !important;
+      margin-bottom: 2px !important;
+  }
+  .cal-event {
+      font-size: 9px !important;
+      padding: 3px 4px !important;
+  }
+  .session-row {
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      gap: 4px !important;
+      position: relative !important;
+  }
+  .session-row .session-price {
+      position: absolute !important;
+      right: 12px !important;
+      top: 12px !important;
+  }
+}
+</style>
+
 </head>
 
 <body>
