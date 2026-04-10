@@ -2,7 +2,7 @@
   "name": "Albert Studio",
   "short_name": "A-Studio",
   "description": "Dashboard for Albert Studio PWA",
-  "start_url": "./albert_studio_app.html",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#1e1e1c",
   "theme_color": "#1e1e1c",

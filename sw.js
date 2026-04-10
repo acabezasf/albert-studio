@@ -1,6 +1,6 @@
 const CACHE_NAME = 'albert-studio-v1';
 const urlsToCache = [
-  './albert_studio_app.html',
+  './index.html',
   './manifest.json',
   './icon.svg'
 ];
@@ -17,7 +17,7 @@ self.addEventListener('fetch', event => {
       // Devuelve del cache si existe, si no, baja de red (ideal offline-first mix)
       return response || fetch(event.request);
     }).catch(() => {
-        return caches.match('./albert_studio_app.html');
+        return caches.match('./index.html');
     })
   );
 });
