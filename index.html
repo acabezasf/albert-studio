@@ -1086,8 +1086,77 @@
       header span {
         font-size: 10px;
       }
-    }
-  </style>
+    
+  /* 1. GRAPH OVERFLOW FIX */
+  #chart-wrapper {
+      width: 100% !important;
+      overflow: hidden !important;
+  }
+  #finance-chart {
+      width: 100% !important;
+      max-width: 100% !important;
+  }
+
+  /* 2. REMOVE TAP HIGHLIGHT (BLUE BOX) */
+  * {
+      -webkit-tap-highlight-color: transparent !important;
+      outline: none !important;
+  }
+
+  /* 3. CALENDAR MOBILE OPTIMIZATION */
+  .calendar-container {
+      padding: 0 !important;
+      width: 100% !important;
+  }
+  .calendar-grid {
+      display: grid !important;
+      grid-template-columns: repeat(7, 1fr) !important;
+      gap: 1px !important; /* Minimal gap like native ios calendar */
+      background: var(--border) !important;
+      border: 1px solid var(--border) !important;
+      border-radius: 8px !important;
+      overflow: hidden !important;
+  }
+  .cal-weekday {
+      background: var(--surface2) !important;
+      font-size: 10px !important;
+      padding: 8px 0 !important;
+      color: var(--text-dim) !important;
+  }
+  .cal-day {
+      background: var(--surface) !important;
+      min-height: 55px !important; /* Slightly shorter for mobile */
+      padding: 4px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 2px !important;
+  }
+  .cal-num {
+      font-size: 10px !important;
+      font-family: 'DM Mono', monospace !important;
+      margin: 0 !important;
+  }
+  .cal-events {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 1px !important;
+  }
+  .cal-event {
+      font-size: 8px !important;
+      padding: 1px 2px !important;
+      border-radius: 1px !important;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      max-width: 100% !important;
+  }
+  .ev-session { border-left: 2px solid var(--accent) !important; }
+  .ev-collab { border-left: 2px solid #6ab0c8 !important; }
+  .ev-norem { border-left: 2px solid #8a8a8a !important; }
+}
+
+}
+</style>
 </head>
 
 <body>
